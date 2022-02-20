@@ -1,0 +1,1020 @@
+Decimal  Binary  Hexadecimal
+  0       0000      0
+  1       0001      1
+  2       0010      2
+  3       0011      3
+  4       0100      4
+  5       0101      5
+  6       0110      6
+  7       0111      7
+  8       1000      8
+  9       1001      9
+  10      1010      a
+  11      1011      b
+  12      1100      c
+  13      1101      d
+  14      1110      e
+  15      1111      f
+
+  Binary structure:
+    2^3   2^2   2^1   2^0
+     8     4     2     1
+
+     1     1     1     1     15
+     8  +  4  +  2  +  1  =  15
+
+101 110 001 000 in octal is 5 6 1 0
+
+0x in C means hexadecimal
+
+0xCAFEBABE
+0xDECAFBAD to binary:
+  D:13 E:14 C:12 A:10 F:15 B:11 A:10 D:13
+  1101 1110 1100 1010 1111 1011 1010 1101
+
+convert 6612 from decimal (base 10) to binary (base 2):
+  6612 - 4096 = 2516 - 2048 = 468       -256 = 212 - 128 = 84 - 64 = 20 - 16 = 4 -4 = 0
+         4096          2048   1024  512  256         128        64   32   16   8  4   2
+           1             1     0     0    1           1          1    0   1    0  1   0
+  if number can be subtracted, 1.
+  if not, 0.
+
+  other way:
+    divide by 2
+    if there's a remainder, 1.
+    if not, 0.
+
+  3834 = 111011111010 = efa
+   OR:
+    same as other way but divide by 16
+      remainder (#/16) is hexadecimal number or letter.
+
+
+C PROGRAMMING LANGUAGE
+
+return type first
+  like int
+function name(parameters)
+  parameter types are listed too
+    string = char *str
+
+if only one statement, don't need {}
+
+
+main() in py = _start: in assembly language
+
+
+bl stands for branch with link
+
+
+---------------------------------------------------------
+			.global count_a
+			.text
+
+// int count_a(char *string)
+count_a:
+	count = 0
+	i = 0 
+	goto 3f
+1:
+	if ch != 'a':
+		goto 2f
+	count += 1
+2:
+	i += 1
+3:
+	ch = string[i]
+	if ch != 0:
+		goto 1b // 1 backwards
+	return count
+
+jk this isn't assembly language
+---------------------------------------------------------
+// count_a.s
+count_a:
+	// x0: string
+	// x1: count
+	// x2: i
+	// x3: ch
+	mov	 	x1, #0
+	mov 	x2, #0
+	b 		3f
+1:
+	cmp		x3, #'a'
+	b.ne 	2f           // 
+	add 	x1, x1, #1
+2:
+	add 	x2, x2, #1 // add x2 and #1, into x2
+3:
+	ldrb 	w3, [x0, x2] // load into register 1 byte
+	cbnz	x3, 1b // compare and branch if not zero, to 1b
+
+	mov 	x0, x1
+	ret // 
+-----------------------------------------------------------
+
+registers:
+	x31: stack point (sp)
+	x30: link register (lr)
+	x29: frame pointers (fr)
+	x0-x15: scratch registers
+	x19-x28: callee-saved registers
+
+
+
+
+If true:
+	A
+B
+
+
+If false:
+	goto 1f
+	A
+1:
+	B
+
+
+
+def sum_of_10():
+	total = 0 
+	for i in range(10):
+		total += i
+	return total
+
+
+	mov	x0, #0 // i = 0
+	mov x1, #0 // total = 0
+	b 	2f // branch to 2f
+1:
+	add	x1, x1, x1
+	add x0, x0, #1
+2:
+	cmp	x1, #10
+	b.lt	1b
+	ret
+
+
+
+// int array_sum(int *array, int count, int threshold)
+array_sum:
+
+	total = 0 
+	i = 0
+	goto 2f
+1:
+	elt = array[i]		
+	ldr elt, [array, i, lsl #3]
+	if elt < threshold
+		goto 3f
+	total += elt
+3:
+	i++
+2:
+	if i < count
+		goto 1b
+	return total
+
+
+array sum in python:
+
+	total = 0
+	for elt in array:
+		if predicate(elt) == 1:
+			total += elt
+	return total
+
+
+array_sum:
+
+				// x19: total
+				// x20: index
+				// x21: elt
+				// x22: array 
+				// x23: count
+
+				total = 0
+				index = 0
+				goto 3f
+2:
+				elt = array[index]
+				result = predicate(elt)
+				mov 	x0, x21
+				bl 		predicate
+				if result == 0:
+					goto 1f
+				total += elt
+1:	
+				index += 1
+3:
+				if index < count:
+					goto 2b
+				return total
+
+
+
+
+2's complement:
+
+	0: 000
+	1: 001: -7
+	2: 010: -6
+	3: 011: -5
+	4: 100: -4
+	5: 101: -3
+	6: 110: -2
+	7: 111: -1
+
+
+	1000 = -8
+	1010 = -6 (-8+2)
+
+	7 = 0111
+		flip bits to find -7:
+			1110 + 1 = 1001?
+	5 = 0101
+		flip = 1010
+		+1 = 1011 = -5
+
+	decimal to 8 bit 2's comp binary:
+		25:
+		25/16 = 1 9/16
+		
+		01 1001
+		flip: 100110
+		add 1: 100111
+		pad to 8 with 0s: 00100111
+
+
+	6 bit 2's comp binary to decimal:
+		100110
+		starts with 1, so it's negative
+		flip: 011001
+		add 1: 011010
+		2+8+16 = 26
+		but negative so -26
+				
+
+
+
+
+make run
+Error 55 means 55 is the return value
+
+./a.out
+echo $?
+55
+
+
+
+Z: zero
+N: overflow
+C: carry
+
+		signed numbers			unsigned
+		
+=		b.eq 	z=1 			b.eq 	z=1
+!=		b.ne 	z=0 			b.ne 	z=0
+<		b.lt 	n!=v 			b.lo 	c=0
+<=		b.le 	~(z=0 & n=v) 	b.ls 	~(z=0 & c=1)
+>		b.gt 	(z=0 & n=v) 	b.hi 	(z=0 & c=1)
+>=		b.ge 	n=v 			b.hs 	c=1
+
+a - b = a + -b
+	  = a + (~b + 1)
+	  		 ~: flip the bits
+
+
+
+
+
+010111101
+000000001
+---------
+000000001
+
+and with 1 = odd
+and with 0 = even
+
+
+
+
+
+
+mov x0, #13
+tst x0, #1 // asking if x0 anded with 1 is zero
+b.ne 2f // taken if number was odd
+b.eq 1f // taken if number was even 
+
+
+
+and xo, xo, #1
+cbz x0, 1f // taken if the number was even
+cbnz x0, 2f // taken if the number was odd
+
+
+------------------------------------------------------
+void sieve(char *primes, int size) {
+	int i;
+	for (i=0; i<size; i++) {
+		primes(i) = 1;
+	}
+	int prime = 2;
+	while (prime*prime <= size) {
+		if (primes[prime]) {
+			int mult = prime+prime;
+			while (mult < size) {
+				primes[mult] = 0;
+				mult += prime;
+			}
+		}
+		prime++;
+	}
+}
+-----------------------------------------------------
+void sieve(char *primes, int size) {
+	i = 0
+	goto 2f
+1:
+	primes[i] = 1
+	i++
+2:
+	if i < size
+		goto 1b
+		
+	prime = 2
+	goto 4f
+3:	
+	candidate = primes[prime]
+	if candidate = 0
+		goto 5f
+		
+	int mult = prime+prime
+	goto 7f
+6:
+	primes[mult] = 0
+	while (mult < size) {
+		primes[mult] = 0;
+		mult += prime;
+7:
+	if mult < size
+		goto 6b
+5:
+	prime++
+4:
+	squared = prime*prime
+	if squared <= size
+		goto 3b
+--------------------------------------
+			.global sieve
+			.text
+
+// void sieve(char *primes, int size)
+sieve:
+			// x0: primes
+			// x1: size
+			// x2: i
+			// x3: candidate
+			// x4: prime
+			// x5: mult
+			// x6: squared
+			// x7: temp
+
+			mov  	x2, xzr
+			b 		2f
+1:
+			mov 	x7, #1
+			strb	w7 [x0, x2] // w is 32 bit version of register
+			add 	x2, x2, #1
+2:
+			cmp 	x2, x1
+			b.lt 	1b
+
+			mov  	x4, #2
+			b 		4f
+3:
+			ldrb 	w3, [x0, x4]
+			cbz 	x3, 5f // compare and branch if 0
+
+			add  	x5, x4, x4
+			b 		7f
+6:
+			strb 	wzr, [x0, x5]
+			add 	x5, x5, x4
+7:
+			cmp 	x5, x1
+			b.lt 	6b
+5:
+			add 	x4, x4, #1
+4:
+			mul 	x6, x4, x4
+			cmp 	x6, x1
+			b.lt 	3b
+
+			ret
+			
+----------------------------------------------------------------------
+
+				.global _start
+				
+				.equ 	sys_write, 64
+				.equ 	sys_exit, 93
+				.equ 	stdout, 1
+				
+				.text
+_start: 	
+				bl 		helloworld	
+				mov 	x8, #sys_exit		
+				svc 	#0 					// supervisor call
+				
+				
+helloworld:
+				mov 	x0, #stdout			// 
+				adr 	x1, msg 			// 
+				mov 	x2, #msg_size		// 
+				mov 	x8, #sys_write		// 
+				svc 	#0 					// 
+				
+				cmp 	x0, #0 				// 
+				b.ge 	1f 					// 
+				
+				//write error
+				mov 	x0, #1 				// 
+				ret 						// 
+				
+1:
+				mov 	x0, #0 				// 
+				ret 						//
+				
+				
+				.data
+msg:	
+				.ascii 	"Hello, world!\n" 	// 1 byte per character
+				.equ  	msg_size, .-msg  	// 
+
+-----------------------------------------------------------------------------
+
+reverse_string(char *a, int size) {
+	char *b = str + size -1;
+	while (a < b) {
+		char temp = *a;
+		*a = *b;
+		*b = temp;
+		a++;
+		b--;
+	}
+}
+
+|
+V
+
+reverse_string(char *a, int size) {
+	char *b = str + size
+	b -= 1
+	goto 2f
+1:	
+	char olda = *a
+	char oldb = *b
+	*a = oldb
+	*b = olda
+	a++
+	b--
+2:	
+	if (a < b)
+		goto 1b
+		
+|
+V
+
+				.global reverse_string
+				.text
+
+// reverse_string(char *a, int size) {
+reverse_string:
+				// x0: a
+				// x1: size
+				// x2: b
+				// x3: olda
+				// x4: oldb
+				
+				add 	x2, x0, x1
+				sub 	x2, x2, 1
+				b 		2f
+1:
+				ldrb 	w3, [x0]
+				ldrb 	w4, [x2]
+				strb 	w4, [x0]
+				strb 	w3, [x2]
+				add 	x0, x0, #1
+				sub 	x2, x2, #1
+2:
+				cmp 	x0, x2
+				b.lt 	1b
+				
+				ret
+---------------------------------------------------
+test 1 practice
+
+1
+2
+4
+8
+16
+32
+64
+128
+256
+512
+1024
+2048
+4096
+8192
+
+1548-1024=524-512=12-8=4-4=0
+11000001100
+
+168 from hex to binary
+8*16^0 + 6*16^1 + 1*16^2
+8 + 96 + 256 = 360
+360-256=104-64=40-32=8-8=0
+101101000
+
+
+16
+256
+4096
+
+110 0010 1110 to hex
+6   2    14(e)
+62e
+
+
+13750 to hex
+to binary first
+13750-8192=5558-4096=1462-1024=438-256=
+11 0101 1011 0110
+3  5    11b  6
+35b6
+
+
+221 from dec. to 10 bit 2s comp binary
+221-128=93-64=29-16=13-8=5-4=1
+0011011101 (padded with 2 zeros)
+
+-195 to 9bit 2comp
+195-128=67-64=3-2=1-1=0
+11000011
+011000011 padded to 9
+100111100 flipped 
+100111101 added 1
+binary == 100111101
+
+
+011101001 to decimal
+1+0+0+8+0+32+64+128+0=233
+
+111101100 to decimal
+000010011 flip
+000010100 add 1
+4+16=20 so it's -20
+
+12 to 6bit 2comp
+1100
+001100 padded 
+
+-231 to 10bit 2comp
+231-128=103-64=39-32=7-4=3-2=1-1=0
+11100111
+0011100111 padded
+1100011000 flipped
+1100011001 added 1
+
+---------------------------------------------------
+
+
+pipelining
+
+okay.
+
+----------------------------------------------------------------
+
+0100000000
+OR
+0000100000
+=
+0100100000
+OR
+0000000010
+=
+0100100010
+
+1111111110
+AND
+1011011101
+=
+1011011100
+
+--------------------------------------------------------------------------------------
+10/22
+
+Sudoku Solver
+	10 steps, 1 due date
+	
+	
+blr: branch with link to register
+
+full pseudocode for step 1 is in doc/doc.md
+
+ldrh for 16 bit values
+	h for halfword
+	use w instead of x for the register
+
+board[i] use ldr and lsl#1 
+input[i] use ldrb
+
+resctructure the pseudocode before going to assembly
+
+
+we'll talk about step 2 on monday, 
+not talking about step 1 anymore
+
+
+
+
+
+
+
+
+step 5 
+
+int candidate = 1;
+for (int dy = -1; dy <= 1; dy++) {
+	for (int dx = -2l dx <= 2; dx += 2) {
+		// pmt dot or digit
+		candidate ++;
+	}
+}
+
+
+
+
+
+./a.out < a.expected?
+
+
+
+
+
+
+
+step 6
+
+tst 	x5, #0x8000
+b.eq 	was solved
+
+
+
+
+
+
+
+
+
+
+ieee754 floats 
+
+
+0 101 1001
+s exp frac
+bias = 2^(k-1)-1 = 3
+k = 3 (# of exp bits)
+
+exp value: 2
+frac value: 1.1001
+	1+1/2+0+0+1/16 = 1 9/16 = 25/16
+		25/16 * 2^2 = 25/4 = 6 1/4
+
+normalized means the exp part is not all 0 or 1s
+exp part: bits - bias 
+
+frac part: 1.bits
+
+
+0 001 0111
+
+exp: -2
+frac: 1.0111 = 1 7/16 = 23/16
+	23/16 * 2^-2 = 23/16 * 1/4 = 23/64
+	
+	
+denormalized numbers: exp bits are all 0s
+exp: 1 - bias
+frac: 0.bits
+
+1 000 1011
+exp: -2
+frac: 0.1011 = 11/16
+value: 11/16 * 2^-2 = 11/16 * 1/4 = -11/64
+
+
+
+1 	frac part = x.frac_bits
+		x = 1 for normalized
+		x = 0 for denormalized
+2 	k = # of exp bits
+3 	bias = 2^(k-1)-1
+4  	exp part = y - bias
+		y = exp_bits for normalized
+		y = 1 for denormalized
+5 	answer = frac * 2^exp
+6 	negative if first bit is 1
+
+
+5/64
+1 1/4
+-1 1/8
+1/2
+-1/16
+-1
+-15
+-4 1/2
+1/16
+15/32
+
+
+101.11011
+5   27/2^5 (decimal point is left 5 times)
+
+
+0b1111111110 AND pencil mark square 
+	if result is 0, no remaining candidates
+	if non 0, pencil marks still set
+	
+	
+3/256 from decimal to 9bit float with k=4
+	0 0000 1100 
+	
+	0.00000011
+	0.xxxx * 2^-6
+		bias = 2^k-1 -1
+			2^3 -1
+			7
+		exp = 1-bias
+			1 - 7
+			-6
+		0000000.11*2^-6
+		
+-2 3/4 to 6bit k=2
+	1 xx xxx 
+		1 means negative
+	binary
+		10.11
+	1.011 * 2^1
+	
+	1 10 011
+	
+-7 3/4 to 9bit k=3
+	1 xxx xxxxx
+	bias = 3
+		1-3 = -2
+		2^-2 = 1/4
+		smaller than 1/4 is denormalized
+	111.11
+	need to be in form 1.1111
+	1.1111 * 2^2 = 111.11
+	exp value is 2
+	bits - bias = exp
+	bits - 3 = 2
+	bits = 5
+	1 101 xxxxx
+	1 101 11110
+
+
+-2 1/2
+	10.01
+	exp v is 1
+	bits-3=1
+	bits=4
+	1 100 0100
+		
+-----------------------------
+
+7/16		
+	0.0111
+	1.11 * 2^-2 = 0.0111
+	exp v is -2
+	bits - bias = -2
+	bits - 3 = -2
+	bits = 1
+	0 001 1100
+	
+-3/32
+	0.00011
+	exp = 1 - bias
+	-2
+	0.011 * 2^-2 = 0.00011
+	1 000 0110
+	
+-12 1/2
+	1100.01
+	1.10001
+	+3
+	6
+	1 110 1001
+	
+-1/32
+	0.00001
+	exp is -2
+	000.001
+	1 000 0010
+	
+29/64
+	0.011101
+	001.1101
+	-2
+	+3
+	1
+	0 001 1101
+	
+2 1/8
+	10.001
+	1.0001
+	1
+	+3
+	4
+	0 100 0001
+	
+-15/64
+	0.001111
+	000.1111
+	1 000 1111
+	
+-11
+	1011.0
+	1.0110
+	3
+	6
+	1 110 0110
+	
+-infinity
+	1 111 0000
+	
+-1/8
+	0.001
+	000.1
+	1 000 1000
+
+--------------------
+
+1 	frac part = x.frac_bits
+		x = 1 for normalized
+		x = 0 for denormalized
+2 	k = # of exp bits
+3 	bias = 2^(k-1)-1
+4  	exp part = y - bias
+		y = exp_bits for normalized
+		y = 1 for denormalized
+5 	answer = frac * 2^exp
+6 	negative if first bit is 1
+
+
+1 0111 1000
+	1.1000 = 1 1/2
+	k = 4
+	bias = 7
+	exp = 0111 - 7 = 7-7 = 0
+	1 1/2 * 2^0 = 1 1/2
+	-1 1/2
+	
+1 0100 0010
+	1.001 = 1 1/8 = 9/8
+	k4 b7
+	exp = 0100 - 7 = 4 - 7 = -3
+	9/8 * 2^-3 = 9/8 * 1/8 = 9/64
+	-9/64 
+	
+0 1101 1000
+	1.1 = 1 1/2
+	13 - 7 = 6
+	3/2 * 64 = 3*32
+	96 
+	
+0 0000 0111
+	0.0111 = 7/16
+	1-7=-6
+	7/16 * 1/64
+	7/1024
+	
+0 0100 1010
+	1 5/8 = 13/8
+	4-7=-3
+	13/8*1/8
+	13/64
+	
+1 0111 1110
+	1 7/8 = 15/8
+	0
+	-1 7/8
+	
+0 0000 0001
+	1/16
+	-6
+	1/16*1/64
+	1/1024
+	
+1 1011 0010
+	1 1/8
+	11-7=4
+	9/8 * 16
+	-18
+	
+1 0111 0000
+	1 0/16 = 1
+	7-7=0
+	1*1
+	-1
+	
+1 0011 1011
+	1 11/16 = 27/16
+	3-7=-4
+	27/16 * 1/16
+	-27/256
+	
+-----------------------------
+
+test practice 10 bit k=4 (bias = 7)
+	smallest normalized number:
+		1-7=-6
+		2^-6 = 1/64
+
+2 1/2
+	10.01
+	1.001
+	exp is 1
+	bias = 2^(4-1) -1 = 7
+	1+7=8
+	0 1000 01000
+	
+-37
+	100101.0
+	1.001010
+	5+7=12
+	1 1100 00101
+	
+74
+	1001010.0
+	1.0010100
+	6+7=13
+	0 1101 00101
+	
+-1 27/32
+	1.11011
+	0+7=7
+	1 0111 11011
+	
+-13/512
+	0.0000001101
+	exp = 1-7 = -6
+	0000000.1101
+	1 0000 11010
+	
+	
+1 0000 10001
+	0.10001 = 17/32
+	exp = 1-7 = -6
+	17/32 * 1/64
+	-17/2048
+	
+	
+0 100 0010	k=3 bias = 3
+	1 1/8 = 9/8
+	4-3=1
+	1 1/8 * 2^1
+	2 1/4
+	
+0 101 011 k=3
+	1 3/8 = 11/8
+	5-3=2
+	11/8 * 4
+	11/2
+	5 1/2	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

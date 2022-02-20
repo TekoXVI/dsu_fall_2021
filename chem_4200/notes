@@ -1,0 +1,1217 @@
+Chem 4200
+
+book: environmental chemistry colin baird 5th ed.
+
+carbon footprint calculator
+
+human pollution sources
+  population growth
+  rise in affluence - main one
+  technological stuff
+
+Green chemistry:
+  Reduce waste
+  Reduce resource consumption
+  Reduce energy consumption
+---------------------------------------
+8/25
+tropo-, strato- (combined 99.9% mass), meso-, and thermosphere
+  stratopause between strato and meso
+    temp goes up
+  mesopause between meso and thermo
+    temp goes down
+
+composition
+  absolute: #molecules/cm^3
+  relative: ppm = molecules of gas / molecules of air
+                = volume gas / volume air
+
+E = hc/theta = hv
+  h = 6.626x10^-34 J*s
+  c = 3x10^8 m/s
+  theta = wavelength
+
+UV-A (320-400 nm wavelength) gets through O2 and O3
+
+O2 --hv-> 2O
+
+deltaH* = 498.4kJ/mol
+
+Avogadoro's # = 6.022x10^23
+
+theta = h*c /
+
+theta = 240nm
+
+
+UV-B causes skin cancer
+
+O3 is in the stratosphere at 25km (max concentration)
+  it maintains certain properties of the stratosphere
+UV-C breaks up 02 into molecular oxygen
+
+Dobson Units = DU
+  how many molecules are needed to make a layer of .01mm at STP (0 celcius, 1 atm)
+
+O3 + UV photon (theta < 320 nm) --> O2* + O*
+  O + O2 --> O3
+  O + O3 --> 2 O2
+
+Chapman cycle
+
+  <-------- +O -------
+O2 --UV-C-> O --O2-> O3
+             <- UV-B --
+
+  uvb destruction of O3 has very high activation energy
+
+X = catalyst, can be NO from N2O in troposphere
+              or OH from water or methane
+                H2O + O --> 2 OH
+              or Cl or Br.
+                1 Cl can destroy 10000 O3 molecules
+                1 Br can destroy 10s of thousands but less com
+                
+                O2 --hv-> 2O
+                mon
+                  active forms are ClO and BrO
+                    inactive forms are HCl, ClONO2
+                      Cl + CH4 --> CH3 + HCl
+                        +OH --> Cl + H2O
+                      ClO + NO2 --> ClONO2 -hv-> ClO + NO2
+
+X' + O3 --> X'O + O2
+X + O3 --> XO + O2
+X'O + XO --> X' + X + O2
+------------------
+2 O3 --> 3 O2
+
+  middle-upper atmosphere
+
+-------------------------------------------------
+8/30
+
+on September 15, need a page outline of what why and how
+
+peak ozone destruction September to October over Antarctica
+  Half of the ozone was gone in 1994
+the changes were not exclusive to Antarctica
+
+PSCs: Polar Stratospheric Clouds
+
+air current vortex forms over the poles at winter?time
+  air is isolated from the rest of the atmosphere
+    Nitrogen oxide concentration was lower in the vortex
+      not enough to deactivate Chlorine
+        so ozone gets destroyed.
+          some water gets to the stratosphere
+            water condenses and traps particles (ice crystals)
+              reactions at the surface of the crystals is a cause of ozone destruction
+
+              Activation of Chlorine
+
+              ClONO2 (g) + H2O (aq) --> HOCl (aq) + HNO3 (aq)
+              HCl (aq) --> H+ (aq) + Cl- (aq)
+              HOCl (aq) + Cl- (aq) --> Cl2 (g) + OH- (aq)
+              ----------------------------------------------
+              ClONO2 (g) + HCl (aq) --> Cl2 (g) + HNO3 (aq)
+              Cl2 (g) --UV-> 2 Cl
+              HOCl --hv-> OH + Cl
+
+------------------------------------------------------------
+9/1
+
+October is peak ozone loss time
+
+all of the ozone in the troposphere is contaminant
+
+ODS - Ozone Depletion Substances
+
+ChloroFluoroCarbons are:
+  non flammable
+  taste and odorless
+  chemically stable
+  low boiling points
+
+  formula to code:
+    CFC abc
+      a = carbon -1
+      b = hydrogen +1
+      c = fluourine
+
+      for Chlorine:
+        H + F + Cl = 2 * Carbon + 2
+
+
+    C1H0F2
+      102-90 = 12
+        so it's CFC12
+
+    rule 90:
+      CxHyFz
+        xyz - 90 = abc
+
+code to formula:
+  abc + 90 = xyz (rule 90)
+
+  CFC 113 to formula:
+
+    113 + 90 = 203
+
+    2 Carbon
+    0 Hydrogen
+    3 Fluorine
+
+    2 * C + 2 - H - F = 2 * 2 + 2 - 3 = 3 Chlorine
+    so formula is C2F3Cl3
+
+  CFC 124
+    214
+    Cl = 2*2+2-1-4 = 1
+    C2HF4Cl
+
+    CH3CFCl2 to code:
+      231-90 = 141
+      CFC 141
+
+Carbon tetrachloride: 26 years lifetime
+1,1,1-trichloroethane: 5 years
+  half is destroyed in the troposphere by OH
+HCFC HydroChloroFluoroCarbons
+  no long term ozone destruction potential
+
+HFCs Hydro ChloroCarbons dont have chlorine which is good
+  long lifetime but okay because of no cl
+
+  CF3COOH, TFA
+
+Halons CFC with at least one bromide
+------------------------------------------------------------------
+9/8
+
+O3 --UVB-> O2 + O*
+O* + H2O --> 2 OH
+	need sunlight for this
+
+
+step 1: OH addition or abstaction
+	OH + CO --> HOCO. 
+				    ..   .   ..
+				(H - O - C = O)
+			        ..      ..  
+
+    OH  + CH4 --> CH3. + H2O
+    OH + NH3 --> NH2. + H2O
+	OH + H2S --> HS. + H2O
+	OH CH3Cl --> CH2Cl. + H2O
+
+CH2O --UV-> H. + .CHO
+	photodissociation
+
+step 2:
+	CH3. + O2 --> CH3OO. peroxyradical
+	
+	RCO. + O2 --> R-C-O-O.
+	add				=O
+	CH3OO. = NO --> CH3O. + NO2		NO2 --hv-> NO + O
+	HOO. + NO --> OH + NO2       	O + O2 --> O3
+	abstract
+	CH3O. + O2 --> CH2=O + HOO. hydroxiperoxide
+	HOCO. + O2 --> CO2 + HOO.
+	HCO. + O2 --> CO + HOO.
+	R-CH2-C-H2-02 --> R-CH2 + CH2O
+
+
+
+Pollutants:
+	O3
+	NOx - primary
+	SOx - primary
+	CO2
+	hydrocarbons
+	particulates
+
+
+H2S. + OH  --> HS. + H2O
+HS. + O2 --> HS00.
+HSOO. + NO --> HS0. + NO2
+HSO. + O2 --> SO2 + HO.
+-------------------------
+H2S + 202 +NO --> H2O + NO2 + SO2
+
+
+---------------------------------------------------------------
+9/13
+
+Alkenes
+
+CH2=CH2
+
+CH2CH2 + .OH --> CH2CH2OH
+.CH2CH2OH + O2 --> .OOCH2CH2OH
+.OOCH2CH2OH + NO --> NO2 + .OCH2CH2OH
+the rest is on paper
+
+
+.OH + NO2 --> HNO3
+.OH + NO --> HNO2
+
+
+------------------------------------------------------------
+9/15
+
+reducing NOx and VOC
+	vehicular traffic
+		catalytic converters
+			CO + CnHm + CH2O --> CO2 + H2O
+				excess these ^ supply below reaction
+			NO --> N2
+
+			too much air = more NOx
+			too much fuel = more hydrocarbons and CO
+
+			don't convert startup emissions
+				has to be hot to work
+
+		diesel CCs:
+			less efficient
+			no NOx conversion
+			solid and liquid particles form
+				filters to remove
+			switch between lean and rich
+			
+	power plants
+		lower the temp of the flame
+		combust fuel in stages
+		CC of NOx
+		wet scrubbing of gases
+			convert NOx to insoluble to remove it
+		
+	solvents
+		reduction of VOCs
+			use latex paint versus oil
+				coelescents help the paint bind
+			replace organic solvents
+				supercritical and liquid CO2
+
+			ionic liquids
+				liquid salt
+
+	combustion of coal
+		SO2 sulfer dioxide
+			volcanoes
+			plant decomposition
+		untropogenic sources
+			electric generation
+
+	precombustion
+		removing sulfer before burning
+	post combustion
+		scrubbing to pass gas through calcium carbonate or limestone
+			forms calcium sulfate to be collected
+	chemical cleaning
+		treat with hot chemicals
+	biological cleaning
+	conversion 
+		avoid burning the coal
+			treat with steam at 700-1000 degrees
+				forms carbon monoxide and H2 
+
+	control oxygen and temperature
+		add absorbents to trap SOs as they're formed
+
+	smelting industry
+		put the gas up higher
+			just displaces the pollution
+		high concentration of SO2 can convert to sulfuric acid to be used by someone else
+		2H2S + SO2 --> 3S + 2H2O
+
+
+SO2(g) + OH --> OSOHO --O2-> SO3 + HOO. + H2O --> H2SO4(aq)
+
+O3 and hydrogen peroxide dissolved in water droplets
+SO2 + H2O --> H2SO3 --> HSO3- + H+
+	HSO3 + O3 --> O2 + H2SO4
+	HSO3- + H2O2 --> H2O + HSO4-
+
+
+
+------------------------------------------------------------------------
+9/22
+
+Indoor air pollution:
+	 formaldehyde
+	 	construction materials- in plywood, evaporates.
+	 gasoline related hydrocarbons
+	 	benzene is carcinogenic
+	 NO2
+	 	gas furnace
+	 		high temps allow oxidation of the air
+	 CO
+	 	from heaters that use fuel with carbon
+	 		binds to hemoglobin
+	 environmental tobacco smoke
+	 asbestos
+
+-------------------------------------------------------
+
+TEST 1 STUDYING
+
+wavelength and conversions
+uv absorsion
+enough energy to dissociate or excite
+
+formed and why
+chapmann
+why ozone why layer
+conditions in strato
+
+destruction of ozone
+
+catalytic destruction why
+crystals
+acl to clo
+
+list ods ozone destruction something
+how they act, 
+which are worsw
+how they're phased out 
+
+primary and secondARY pollutants
+free radical chem.
+	hydroxile attaxck and oxygen
+sources of vocs and noxs
+	what has been done or proposed to reduce them
+sulfer sources
+	what happens in the atmosphere
+	whats been done to reduce them
+particulates what are they
+	where come from
+	what happens to them in atm.
+
+acid rain 
+	how produced from suofer and nitric acid?
+	calc the ph of acid rain from conc. in air
+	methods to decrease effect on lakes, soil
+		limestone
+
+air quality 	
+	what does ozone do to health
+	how noxs and vocs affect
+
+general indoor air pollution things
+
+----------------------------------------------------	
+Chapter 5 the greenhouse effect
+
+blackbody 100% effective in absorbing uv
+
+500 nm is the peak of radiation from the sun
+
+below 400 is UV, above 800 is IR
+	50% is absorbed by land water vegetations building
+	20% absorbed by water droplets in the air
+	30% refleted back into space
+		called albedo 
+
+absorbed energy gets emitted as energy 
+	this is thermal IR
+		13um is peak wavelength
+
+	this energy gets absorbed by particles in the atmosphere
+		some gets bouced back to earth
+		some is re emitted as heat
+
+	-18 C would be the temp without greenhouse effect
+		like -50 F brr cold
+
+single layer absorbs 2/3
+multilayer depends on
+
+
+linear molecule:
+	number of vibration modes = 3N-5
+other shape:
+	3N-6
+
+diatomic molecules dont help with greenhouse
+
+---------------------------------------------------
+9/29
+
+CO2 2 peaks in IR because stretching doesn't change the dipole moment
+	has to be assymmetrical stretching to change dipole moment
+
+
+CO2 increase is 75% from fossil fuel combustion, 
+	25% from deforestation
+
+	ocean is a natural sink to absorb CO2
+
+water is a greenhouse gas
+	60% temp increase
+
+
+8-13 atm window
+
+methane absorbs 23x more than co2
+	has < 10 years lifetime
+	
+	Sinks:
+	- Loss from air
+	- Soil
+	- Loss to the stratosphere
+
+	Sources
+	- Anaerobic decomposition of organic matter
+	- natural wetlands
+	- flooding of land
+	- landfills
+	
+	- Burning of biomass
+	- Ruminant animals
+
+N2O linear
+	120 year lifetime
+	ppb vs ppm for co2
+
+	nitrification and denitrification
+	NH3 --> N2O <--NO3
+	no sink in the troposhere
+
+O3
+
+SF6
+	sulfur hexafluoride
+		3200 year lifetime
+		24000 more powerful than CO2
+			< 10 ppt
+
+
+
+airborne particles can reflect light
+	temp reduction
+or absorb it
+	temp increase
+	darker particles absorb more
+		coal, volcanoes
+		
+sulfate aerosols reflect only
+	they're the most common
+	they act as nuclei for formation of clouds
+	they backscatter some of the light
+		smaller than ordinary droplets so they're more efficient
+		
+
+-------------------------------------------------------------------------------
+10/6
+
+Sequestration
+	H2CO3(aq) + CaCO3(s) -> Ca(HCO3)2(aq)
+		under 4 km depth in the ocean, CO2 binds with water and sinks
+		can also pump down into:
+			unminable coal beds
+			mined salt dome
+			deep aquifer
+			depleted oil or gas reserves
+				enhanced oil recovery
+				
+				
+mol/L to ppm (mg/L)
+
+Henry's law
+	Kh = [O2]/partial pressure of O2
+
+--------------------------------------------------------------------------
+10/11
+
+O2 is reduced from 0 to -2 state in H2O or OH-
+	acidic solution: 	O2 + 4H+ + 4e- --> 2H2O
+		(line 539)
+	basic solution: 	O2 + 2H2O + 4e- --> 4OH-
+		(line 547)
+	
+solubility increases with pressure and temp
+
+O: 			-2
+H: 			+1
+Halons: 	-1	
+
+O2 --> H2O
+	right side x2
+	add 4H+ to left
+		now left is +4 charge
+			add 4 electrons
+			
+
+O2 --> OH- 
+	right x2
+	add 2 H+ to left (this makes it acidic)
+	add 4 e- to left
+	
+	+ 2OH- to both sides
+		(to get rid of H+)
+	4e- + 2H2O + O2 --> 4OH-
+
+water redox chemistry
+	most common substance oxidized by dissolved oxygen in water is organic matter
+			0 to +4 means it's a redox reaction (only look at state change of carbons)
+				should have a reduction and oxidation reaction
+		carbon's charge is whatver makes it zero
+			0 in above example on left
+			+4 on right
+			leo: losing electrons: oxidized
+			ger: gaining electrons: reduced
+			
+		half reactions:
+			CH20 --> CO2
+				2CH20 --> CO2
+				CH20 + H2O --> CO2 
+				CH20 + H2O --> CO2 + 4H+
+				
+				CH20 + H2O --> CO2 + 4H+ + 4e-
+			
+			O2 --> H2O
+				(line 540)
+				4e- + 4H+ + O2 --> 2H2O
+				
+				
+				CH20 + H2O --> CO2 + 4H+ + 4e-
+				4e- + 4H+ + O2 --> 2H2O
+				-----------------------
+				CH2O + O2 --> CO2 + H2O (acidic)
+				
+
+			CH20 + H2O --> CO2 + 4H+ + 4e-
+				+4OH- to both sides
+					1 H2O on left cancels 1 on right
+						leaves 3 on right
+							H+ + OH- --> H20
+					CH2O + 4OH- --> CO2 + 3H2O + 4e-
+					4e- + 2H2O + O2 --> 4OH-
+					--------------------------------
+					CH2O + O2 --> CO2 + H2O (basic)
+				
+	NH3 --> NO3-
+		NH3 + 3H2O --> NO3- + 9H+ + 8e-
+		
+	
+	O2 --> H2O
+		4e- + 4H+ + O2 --> 2H2O
+		x2
+	
+	NH3 + 3H2O --> NO3- + 9H+ + 8e-
+	8e- + 8H+ + 2O2 --> 4H2O
+	-------------------------------
+
+
+	to get to basic, add OH- to both sides
+		NH3 + 2O2 + OH- --> NO3- + 2H2O
+		
+
+water in streams and rivers are constantly replenished by oxygen
+	lakes deep water can be oxygen deprived
+	
+
+biochemical oxygen demand BOD
+	capacity of bio. and org. matter to comsume oxygen
+		usually catalyzed by bacteria
+	measure oxygen, wait 5 days, measure again (at 25C)
+	surface waters have a BOD of about 0.7 mg/L
+	sewage water has BOD of about 100 mg/L 
+
+
+chemical oxygen demand COD
+	dichromate ion Cr2O7^(2-)
+	Cr2O7 + 14H+ +6e- --> 2Cr^3+ + 7H2O
+	
+total organic content TOC
+	suspended & dissolved organic matter
+	
+dissolved organic content DOC
+	dissolved organic matter
+	
+stratification: warm water on top of cold water (summer(warm weather))
+	aerobic on top of anaerobic conditions
+		aerobic oxidized 
+		anaerobic reduced or low oxidized 
+
+------------------------------------------------------------------------------
+10/13
+
+pyrite FeS2
+
+SO4^2- --> S
+	SO4^2- --> S + 4H2O
+	8H+ + SO4^2- --> S + 4H2O
+	6e- + 8H+ + SO4^2- --> S + 4H2O
+
+CH2O --> CO2
+	H2O + CH2O --> CO2
+	H2O + CH2O --> CO2 + 4H+
+	H2O + CH2O --> CO2 + 4H+ +4e-
+	
+	
+12e- + 16H+ + 2SO4^2- --> 2S + 8H2O
+3H2O + 3CH2O --> 3CO2 + 12H+ +12e-
+-----------------------------------
+4H+ + 2SO4^2- + 3CH20 --> 2S + 5H2O + 3CO2
+
+
+pE scale to show oxidation and reduction conditions
+
+	pE = -log10[e-]
+	low pE means electrons are available (reducing environment)
+	high pE means electrons are unavailable (oxidizing environment)
+	
+	pE = E / 0.0591
+	pE = E / (RT/nF)
+		T = temp
+		n = # of electrons
+		F = Faraday's constant
+		
+		E = reduction potential
+	
+	1/4O2 + H+ +e- <--> 1/2H2O	
+		pE = Eo / 0.0591 - log(1/(PO2^1/4)[H+]) 
+		= 1.23/0.0591 + 1/4logPO2 + log[H+]
+		= 20.81 + -0.169445 - 7 = 13.64
+		saturated at nuetral pH
+	
+	pE can go up or down based on pH 
+		lower pH increases pE
+		
+	1/8CO2 + H+ + e- <--> 1/8CH4 +H2O
+		pE = Eo / 0.0591 - log(PCH4^1/8 / (PCO2^1/8 * [H+])) 
+	 	= 2.87 - 1/8log(PCH4 / PCO2) - pH 
+	 	= 2.87 - 7 
+	 	= -4.13 low pE reducing conditions
+
+
+deduce the equilibrium ratio of NH4+ to NO3- at pH 6:
+for aerobic water having a pE of +11
+	NO3- <--> NH4+
+	NO3- <--> NH4+ + 3H2O
+	5H+ + NO3- <--> NH4+ + 3H2O
+	5H+ + NO3- + 8e- <--> NH4+ + 3H2O
+	divide by 8 to have 1 electron
+	5/4H+ + 1/8NO3- + e- <--> 1/8NH4+ + 3/8H2O
+	
+	pE = pEo - log([NH4+]^1/8 / ([H+]^5/4 * [NO3-]^1/8))
+	pE = pEo - (log(1/[H+]^5/4) + 1/8log([NH4+] / [NO3-]))
+	pE = Eo/0.0591 - 5/4pH - 1/8log([NH4+] / [NO3-]))
+	
+	11 = 14.15 - 5/4 x6 - 1/8log([NH4+] / [NO3-]))
+	4.35 - 1/8log([NH4+] / [NO3-])
+	
+	
+for anaerobic water with pE of -3
+
+-------------------------------------------------------------------------
+10/18
+
+Fe3+ + e- <--> Fe2+
+	
+	pE =pEo - log([Fe2+]/[Fe3+])
+	water depleted: pE = -4.1
+	
+	iron 3 iron 2 standard reduction potential = 0.770 V
+	
+	Eo/0.0591 = 0.770/0.0591 = 13.03
+	
+	-4.1 = 13.03 - log(stuff^)
+	
+	stuff = 10^17.13 = 1.34x10^17
+	
+
+	water saturated: pE = 13.6 
+	
+	ratio = 0.27
+
+
+O2 + 4h+ + 4E- --> 2H2O
+divide by 4
+1/4O2 + h+ + E- --> 1/2H2O
+
+pE = pEo - log(1 / PO2^1/4 [H+]) = pEo + 1/4logPoO2 - pH 
+   = 1.229/0.0591 + 1/4logPO2 - pH 
+   = 20.80 + 1/4log(.21) - pH
+   = 20.80 + -0.169 - pH
+   = 20.63 - pH
+   		This is the slope of the top line of the diagram
+   
+H2O --> H2
+H2O --> H2 + H2O
+2H+ + H2O --> H2 + H2O
+2H+ +2e- --> H2
+H+ +e- --> 1/2H2
+
+pE  = pEo - log(PH2^1.2 / [H+]) 
+	= pEo - 1/2logPH2 - pH // log1 = 0 
+	- pH 
+		this is the slope of the bottom line
+
+solubility equilibrium constant = Ksp
+
+
+to accept an H+ as a base you need a lone pair of electrons
+
+--------------------------------------------------------------
+10/20
+
+
+CO2 + H2O <--> H2CO3
+
+Kh = [H2CO3]/PCO2 = 3.4X10^-2 M/atm
+PCO2 = 390ppm  = 390X10^-6 atm
+[H2CO3] = 390x10^-6 * 3.4x10^-2 = 
+
+HNO3
+H2SO4
+HCl
+HBr
+HI
+HClO4 
+
+H2CO3 <--> H+ + HCO3-    Ka1 = 4.5X10^-7
+HCO3- <--> H+ + CO3 2-   Ka2 = 4.7X10^-11  this one doesn't matter because it's > 3 orders of magnitude smaller
+
+ice chart
+
+		H2CO3 	<--> 	H+ +	HCO3-
+i 		1.32e-5 		0 		0
+c 		-x 				+x 		+x
+e 		1.32e-5 - x 	x 		x
+
+Ka = [H+][HCO3-]/[H2CO3] = x^2 / 1.32e-5 - x = 4.5e-7
+
+solve for x, take positive number
+x = 2.22e-6 Molar
+
+pH = -log(2.22e-6) = 5.61
+
+when you add equilibrium you multiply the constants 
+
+===========================================================
+Chapter 11
+
+water purification
+
+aeration
+	removes dissolved gasses like H2S, VOCs
+	oxidizes organic matter
+	oxidizes Fe2+ to Fe3+
+	
+precipitation and settling
+	water passed through a bed of sand that retains the larger particles
+		collates/colloidal solutions
+			particles float between layers
+				light can allow you to see it
+			colloidal particles are removed
+
+hardness removal
+	add phosphate
+	
+disinfection
+	via Cl2 or O3
+	elimination of microorganisms that can cause illness
+	
+	
+-----------------------------------------------------------------------------
+10/25
+
+RO for desalination
+
+forward osmosis uses less energy
+
+Humic acid
+	soluble at ph > 7
+fulric acid 
+	soluble at any pH
+humin
+	insoluble
+	
+chemical methods
+	O3 ozone
+		advantages
+			strong oxidizing power with a short reaction time
+			does not add chemicals to the water
+			eliminates a wide variety of inorganic, organic, and microbiological problems and taste and odor problems
+		disadvantages
+			equipment and operational costs
+			dangerous (fires)
+			no disinfectant residual
+			formation of disinfection biproducts
+				bromate ion
+				MCL maximum allowed concentration level of contaminants in water
+					BrO3- 10 ppb
+					
+	ClO2 chlorine oxide
+		oxidizing agent
+		ClO2 + 4H+ + 5e- --> Cl- + 2H2O
+		organic cation + O2 --> CO2 + H2O
+		advantages
+			effective bacterial disinfectant, pH range, smaller amounts of DPBs
+		disadvantages
+			cost (explosive, produced on site), chlorite and chlorate
+			2ClO2 + 2OH- --> H2O + ClO3- + ClO2-
+			
+			
+	Chlorination
+		effective bacterial disinfectant
+		low cost
+		residual chlorine
+		
+		produced by
+			dissolving chlorine gas in water
+			calcium or sodium hypochlorite
+			isocyanuric acid
+			
+		DPBs
+			chlorinated organic substances
+				halogenated acetic acids
+				haloacetonitriles
+				haloacetaldehydes
+				chlorinated phenols
+			trihalomethanes THM
+				chloroform
+	chloroamines
+		effective bacterial disinfectant, pH range, few DPBs
+		but slow
+	Bromine
+	copper-silver ionization
+		no DPBs
+		but pH range
+			
+
+
+-------------------------------------------------------------
+exam 2 study guide
+
+greenhouse effect
+	mechanism
+	greenhouse gases
+		what are they how we select
+		have contribution or absorb ir
+	aerosols
+		what do volcano eruptions do
+	
+geoengineering methods
+	SRM
+	removing CO2
+	
+predictions on emission of greenhouse gases
+
+redox chemistry of water
+	nerst eq.
+	organic matter, sulfur, nitrogen compounds, iron
+	pE
+	pH-pE diagrams
+	
+acid-base chemistry of water
+	carbonate and dissolved CO2 equilibrium
+		5 reactions
+			dissoilves
+			cRBONINCacid
+			solubiniot calcuim carbinante
+			hydrixide hydrogen iions porodhce water
+		total alk
+		hardness how to calc
+	 		ppm calcium carbonate
+	
+purification of water
+	physical methods
+		membrane
+		uv disinfection
+	chemical methods
+		chlorine
+		chlorine oxide
+	
+groundwater
+	
+
+-------------------------------------------------------------
+10/27
+
+Groundwater
+	
+Nitrate contamination
+	MCL is 10 ppm nitrate
+	or 44 ppm
+
+	deeper aquifers are less likely to be contaminated
+
+	sources
+		fertilizer
+		cultivation of soil
+		atmospheric deposition
+		human sewage deposited in septic systems
+	
+	can cause blue baby syndrome and cancer
+	
+Perchlorate
+	very highly soluble
+		hard to remove
+		
+organic chemicals
+	chlorinated solvents
+		TCE and PCE
+			trichloroethane and per-
+			industrial solvents
+			degreasing
+			carcinogenic
+		
+	hydrocarbons
+		gasoline
+		benzene toluene xylines
+		easily degradable
+	MTBE
+		fuel additive
+		increase the octanic number of gas
+		more oxygenated fuel for less co2
+		CH3-O-C-(CH3)3 MTBE
+	drugs
+		legal and illegal
+		from sewage
+			poorly absorbed by bodies
+			or flushed
+			
+decontamination
+	pump and treat
+		take from aquifer, treat, put it back
+	in-situ remediation
+		iron wall
+	bioremediation and natural attenuation
+		PCE and TCE can turn into vinyl chloride which is worse
+		
+wastewater and sewage
+	treatment
+		primary: mechanical treatment 
+			larger particles sediment at the bottom
+			lighter ones float up to be skimmed off
+		secondary: biological treatment
+			microorganism catalyzed oxidation
+				gets it down to CO2 and water
+			
+	excess phasphate
+		detergents
+	inorganic salts
+	cyanides
+		poisonous
+		redox to get rid of them
+	modern purification techniques
+		VOCs from liquid to gas in air stripping
+			only if vocs insoluble in water
+		advanced oxidation
+			strong oxidants
+		photocatalytic process
+
+
+---------------------------------------------------------------------------------------
+test 2 review
+
+nonpolar bonds don't change dipole moment so they don't absorb IR
+
+wrote the rest on the paper. oh well. idk.
+
+---------------------------------------------------------------------------------------
+
+toxic heavy metals
+	cannot be degraded or destroyed
+	toxic or poisonous at low concentrations
+	Cr
+	As
+	Cd
+	Hg
+	Pb
+	
+---------------------------------------------------------------------------------------
+
+education project
+
+nov 23	1:30 dixie high
+	
+---------------------------------------------
+
+11/8
+
+ionic 4+ lead
+	in car batteries
+	
+gasoline additives
+	PbR4
+		R means methyl groups
+		not soluble
+		readily absorbed through skin
+		hazard for workers with direct exposure
+		
+lead replaces calcium in bone
+	stays for decades
+	highest risk for fetuses and kids under 7 
+	loss of 2-3 IQ per 100 ppb 
+	
+organic is more toxic than inorganic
+
+lead is less dangerous than mercury
+lead exposure is greater for lead
+
+
+Cadmium
+	sources:
+		natural rock weathering
+		copper, lead, and zinc smelting auto exhaust
+		incineration of waste materials that contain cadmium
+	uses:
+		nickel-cadmium batteries
+		paint pigments
+		
+	760 deegree boiling point
+	seafood and organ meats
+	
+Arsenic
+	extremely toxic because:
+		more metal-like
+		trivalent and pentavalent state
+		AsO3 3- and AsO4 3-
+		organic or inorganic
+	widely distributed in nature
+		herbicides, fingicides
+		smelting of gold, silver, copper lead and zinc
+		combustion of fossil fuels
+		production of iron and steel
+		contaminated groundwater
+		
+	lung, bladder, skin cancer
+	synergetic effect with other carcinogenics
+ 	
+ 	removal from water:
+ 		pass over alumina
+ 		anion exchange or RO
+ 		precipitation
+ 			Fe + AsO4 --> FeAsO4
+
+Chromium
+	trivalent
+	hexavalent
+	
+
+
+
+Aaron brockovich movie to watch
+
+-----------------------------------------------------------------------
+11/10
+
+Pesticides
+
+organic means natural pesticides, not synthetic
+
+solubility:
+	like dissolves like
+	temp increases solubility
+	size
+	
+	Kow = conc in octanol / conc in water
+	
+	hydrolysis
+		R-X + OH --> R-OH + HX   tl/2
+		
+	adsorption on soil
+		Kd = [pesticide]soil / [pesticide]l
+		
+	Bioconcentration factor BCF = conc in fish / conc in water
+	
+	vapor pressure
+		vapor at equilibrium between gas and liquid phase
+		
+	Henrys law
+		Kh = Pg / [p]l
+		
+----------------------------------------------------------------------------------------------
+11/15
+
+DDT has a wedge shape
+
+phosphoric acid 
+	O = P - 3OH
+
+		
+
+
+Toxic Organic Compounds
+	Dioxins
+		byproduct of 2,4,5 T
+		
+	PCBs
+		polychlorinated biphenyl
+		unprimed ring is one that givess the substutuent with the lowest number
+		low solubility so it gets bound to soil and sediments
+		
+	Furans
+		byproduct of dioxin
+		5 ring with Oxygen
+		PCDFs have lots of congeners
+		
+		PCBS are less toxic than dioxins but more abundant
+
+
+Naphthalene is in moth balls
+
+PAH polyaromatic hydrocarbons prolly
+
+four or less rings are air pollutants
+	enough vapor pressure to remain a gas
+	eventually oxidize
+	OH attatches to the center ring
+	O2 attatches to the bottom of the center ring
+	look at slides
+	ends up with O on top and bottom
+	
+more than 4 rings condense and absorb onto surface of soot
+
+PAHs are < 0.1% of PM particulate matter
+	carcinogens
+	
+
+PAHs enter water from oil spills 
+	also from production of creosote
+	
+bay region makes it more hazardous
+PBDE polybrominated diphenyl ether
+	fire retardant
+	
+LRTAP long range transport of atmospheric pollutants
+	more evap in hot places
+	mobile pollutants settle in cold places, condensation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

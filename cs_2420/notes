@@ -1,0 +1,1259 @@
+CS 2420: Introduction to Algorithms and Data Structures
+  Bart Stander
+
+person to my left: Evander
+
+2 midterms, final can replace one of them
+
+pass off all homework in person
+  up to 1 week late
+
+grade is assignment score * test scores
+
+max subsequence problem:
+#return start and end indices to get maximum sum
+
+  def maxSubSequence(A):
+
+
+
+    #Kayle's algorithm:
+    bestS = 0
+    bestE = 0
+    bestT = A[0]
+    for s in range(len(A)):
+      for e in range(s, len(A)):
+        total = 0
+        for i in range(s, e+1):
+          total += A[i]
+        if total > bestT:
+          bestS = s
+          bestE = e
+          bestT = total
+    return bestS, bestE
+
+  A = [-1,2,3,-6,5,6,-5,2,4,-7,5,1,-18,1]
+
+  answer = maxSubSequence(A)
+  print(answer)
+
+----------------------------------------------------------------
+8/26
+
+Exponents
+learn 2^2 to 2^49
+
+0 = 1         10 = 1K       20 = 1M       30 = 1B       40 = 1T
+1 = 2         11 = 2K
+2 = 4         12 = 4K
+3 = 8
+4 = 16
+5 = 32
+6 = 64
+7 = 128
+8 = 256
+9 = 512      19 = 512K                                  49 = 512T
+
+
+2^5 = 32
+log2(32) = 5
+
+
+binary search cut the list in half with every search
+  above or below
+
+  list is 20,000, how many cuts to find?
+  log2(20,000) = 15 ish
+  	because 2^15 = 32k
+  	and     2^14 = 16k
+  		so take the bigger one 
+
+Towers of Hanoi (TOH)
+  4 disks take 2^4 moves
+
+
+First Homework:
+  no selection sort
+    just bubble, shaker, counting sort
+  create function for random list, duplicates allowed
+  test functions
+
+Bubble Sort:
+
+  A = [2,1,4,1,6,3,4,5]
+
+  compare first # to neighbor, swap if out of order
+
+  to copy list A:
+    B = A[:]
+  to test sort:
+    B.sort()
+      if A != B:
+        print("error message here")
+
+
+Shaker Sort:
+
+  A = [0,2,3, .... ,97,98,1,99]
+    only 1 thing out of place
+    alternate pass direction each pass
+      bubble right
+      bubble left
+      repeat
+
+
+*Counting Sort:
+
+  A = [7,4,0,6,4,3,6,4]
+    8 numbers, make them between 0 and 8
+    count how many of each numbers there are
+    F = [0,0,0,0,0,0,0,0] (frequency)
+    index + 1 for each matching number
+    K = 0 for index
+
+
+random.randrange(0,size)
+
+
+Merge Sort:
+
+  A = [6,2,5,4,4,1,3,7]
+  breaks A into two halves
+  sort each half
+  merges the two halves
+  L = [6,2,5,4] --> [2,4,5,6]
+  R = [4,1,3,7] --> [1,3,4,7]
+
+  k = index of A
+  i = index of l
+  j = index of R
+
+  while L and R both have items
+    decide which is smaller between L[i] and R[j]
+      move smaller one into A[k]
+      	increase k
+      	increase i or j, whichever was moved into A
+
+
+*Quick Sort
+
+  Sort left and right into greater than or less than
+
+  A = [4,6,1,5,0,7,6,3]
+    4 is pivot item
+      walk through, if < 4, switch with left most greater than
+      A = [4,1,6,...]
+      A = [4,1,0,5,6,..]
+      A = [4,1,0,3,6,7,6,5]
+              now switch pivot with left most greater than
+      A = [3,1,0,4,6,7,6,5]
+        now 4 will never move again
+
+
+Modified Quick Sort
+
+  after first return:
+    mid = (low + high) // 2
+    A[low], A[mid] = A[mid], A[low]
+
+    the rest is the same
+
+travelling salesman:
+	find shortest path between scattered points
+
+
+
+
+
+
+logN = binary search
+
+NlogN = merge, quick, m.quick
+
+N = counting, bubble (mostly sorted), shaker (mostly sorted), addition, linear search
+
+N^2 = shaker, bubble, quick (mostly sorted), multiplication
+
+N^3 = matrix mult, max subsequence
+
+2^N = towers of hanoi, SAT
+
+N! = traveling salesman 
+
+
+
+Abstract Data Types:
+
+				unordered containers	user-ordered containers		auto-ordered containers
+
+unique			set, student database
+
+duplicates								py list
+
+
+set A = {3,6,2}
+		{3,6,2,6} is the same: duplicates are rejected
+		{3,2,6} is also the same
+	
+
+
+
+
+gTotalAge = 0
+
+def addAges(s):
+	global gTotalAge
+	gTotal += int(s.getAge())
+
+
+# MUST BE A GENERAL PURPOSE CONTAINER
+# users of this class must override the == operator
+
+class blob:
+	def __init__(self):
+		self.mFirst = None
+
+	def Insert(self, item): # return false if item was a duplicate, and not inserted
+		if self.Exists(item):
+			return False
+		 n = Node(item, self.mFirst)
+		 self.mFirst = n
+		 return True
+		
+	def Exists(self, item):
+		
+
+	def Delete(self, item): # return false if can't find item that == matches
+		if not self.Exists(item):
+			return False
+		if self.mFirst.mItem == item:
+			self.mFirst = self.mFirst.mNext
+			return True
+		current = self.mFirst
+		while not current.mNext.mItem == item:
+			current = current.mNext 
+		current.mNext = current.mNext.mNext
+		return True
+
+	def Retrieve(self, item): #given item with just key field, return full item from database, return None if not.
+		
+
+	def Size(self):
+		
+
+	def Traverse(self, callbackFunction): #call callback function for each item in the blob
+		current = self.mFirst
+		while current != None;
+			callbackFunction(current.mItem)
+			current = current.mNext
+	
+
+
+class Student:
+	def __eq__(self, rhs):
+		return self.mSSN==rhs.mSSN # are social security numbers equal
+
+
+class Node:
+	def __init__(self, item, nxt):
+		self.mItem = item
+		self.mNext = nxt
+
+
+def main():
+	SL = blob()
+	...
+	gTotalAge = 0
+	SL.Traverse(addAges)
+	print(..., gTotalAge/SL.Size())
+
+
+
+Addition: order N
+
+multiplication: N^2	
+
+factoring: 10^(N/2)
+
+
+
+
+double linked list
+
+nodes have an item, and next and previous pointers
+
+is vs ==
+
+	if s1 == s2:
+
+	if s1 is False:
+
+
+Big O categories
+	1 			append, pop, index
+	log(n) 		binary search
+	n 			linear search, counting sort
+	nlog(n) 	merge sort
+	n^2 		bubble sort, multiply two n digit #s
+	n^3 		maxsubsequence poorly, matrix mult.
+	n^p 		
+	------------	polynomial ^^ tractable
+	great divide    exponential vv intractable  
+	------------
+	2^n 		SAT, towers of hanoi
+	10^n/2 		factoring
+	n! 			travelling salesperson
+
+
+	NP: nondeterministic polynomial:
+		all exponential problems that if you knew the answer, you could verify it in polynomial time
+			T.O.H. is not NP
+			all NP problems can be mapped to SAT 
+			cook more or less proved that SAT won't be solved in poly time 
+			if you can solve NP complete, you can solve all of them
+			solve NP complete proves NP = P
+			prove anything in NP ring can't be solved to prove NP != P
+
+	program -->
+				Halting Problem --yes/no--> problem will halt (unsolvable)
+	input ---->
+	
+	
+	
+--------------------------------------------------------------------------------------	
+	
+TEST REVIEW:
+
+	log2(260000) = 2^18 
+	
+	log3(81) = 3^x = 3,9,27,81 = 4
+	
+	travelling saleman needs to visit n cities, how many orders can they do that? 
+		n! 
+
+	how many numbers can be created from 8 8 bit integers?
+		64 bits, can each be 1 or 0, so 2^64 = 2^60 and 2^4
+			60 means 18 zeros (3 for each power of 10) 
+			2^4 = 16
+			16 x 10^18
+			
+	what is bigO analysis?
+		study of how work grows as problem size grows 
+		
+	when is bigO analysis mosst important?
+		when they data set is large
+		
+	bigO of linear
+		n
+		
+	binary
+		logn
+		
+	shaker mostly sorted
+		n
+		
+	shaker random
+		n^2
+		
+	quick random data
+		nlogn
+		
+	quick mostly sorted
+		n^2
+		
+	towers of hanoi
+		2^n
+		
+	factoring
+		10^(n/2)
+		
+	counting sort
+		n
+		
+	2 things in sequence, take the worst of the 2
+		nested have to mult orders	
+			for n
+			for n
+			= n work
+			
+			for n 
+				for n
+			= n^2 work
+			
+		n^2 vs for loop with things nested inside
+			for n
+				for n
+					n work
+			= n^3 work
+			
+			n^3 dwarfs n^2 so n^2 doesnt matter
+			n x n^3 work
+			= n^4 work
+			
+			full problem was
+			1	for n 
+			2		n^2 work
+			3		for n 
+			4			for n
+			5				n work
+			
+	is it good practice to always optimize all of your code?
+		dont need to if data is small
+		there is a cost to optimization:
+			time/money
+			clarity
+		find the bottleneck that's making the code slow
+		always or all usually means false
+		
+	where is the bottleneck likely to be?
+		at the worst bigO
+
+	when programming in general should you be more concerned about speed or clarity of code?
+		clarity
+			good variable and function names
+			comments if unclear
+			
+	explain what the category NP refers to
+		nondeterministic polynomial
+			verifiable in polynomial time
+			
+	how do you prove that P != NP?
+		prove that any problem in the NP ring can't be solved in polynomial time
+		
+	how do you prove that P == NP?
+		solve anything in NP in poly time
+		
+	sort m,a,k,w,b,s,c,t with quicksort (first pass before recursion)
+		switch b and w
+			m,a,k,b,w,s,c,t
+		switch c and w
+			m,a,k,b,c,s,w,t
+		switch pivot and rmlt
+			c,k,a,b,m,s,w,t
+		
+	how many compared from merge when data is 256 big
+		far left column has data size (log)
+		8
+		move to right
+		11
+		log11 = 2^11 
+		2x10^3 or 2k or 2000
+		
+	fund. difference between stack and queue
+		stack is first in last out
+		queue is first in first out
+		
+	write py code for bubble sort (10 points)
+		in notes
+		
+	write code for reading and printing code
+		fin = open("data.txt", "r")
+		for line in fin:
+			print(line)
+		fin.close()
+		
+	won't ask for quick sort or counting sort code
+	
+	towers of hanoi 1,000,000,000 disks per second, how long to solve with 50 disks?
+		2^50 / 1,000,000,000 
+		2^50 / 2^30 = 2^20
+		2^20 = 1,000,000 seconds
+
+--------------------------------------------------------------------------------------	
+
+linked lists
+
+from linked_list import blob, Student
+
+gTotalAge = 0
+
+def AddAges(s):
+ 	global gTotalAge
+	gTotalAge += int(s.GetAge())
+	
+
+def main():
+ 	global gTotalAge
+	slist = Blob()
+	
+	#insert
+	fin = open("InsertNames.txt", "r")
+	for line in fin:
+		words = line.split()
+		s = Student(words[0], words[1], ....)
+		ok = slist.Insert(s)
+		if not ok:
+			print(....)
+	fin.close()
+
+	#traverse
+	gTotalAge = 0
+	slist.Traverse(AddAges)
+	print("The average age is", gTotalAge/slist.Size())
+
+	#delete
+	fin = open("DeleteNames.txt", "r")
+	for line in fin:	
+		dummyStudent = Student("", "", line.strip(), "", "0")
+		ok = slist.Delete(dummyStudent)
+		if not ok:
+			print("Could not delete student with SSN", ssn?)
+	fin.close()
+	
+	totalAge = 0
+	totalCount = 0		
+	
+	#retrieve
+	
+		dummyStudent = Student("", "", line.strip(), "", "0")
+		actualStudent = dummyStuden
+		if actualStudent is None:
+			print(....)
+		else:
+			totalAge += age
+			totalCount += 1
+			
+		
+--------------------------------------------------------------------
+
+graphics calculator
+
+
+infix:
+	3+x
+
+postfix:
+	3x+
+
+user enters 3*x+4
+
+x=2
+pf = 3x*4+
+	left to right
+	when you see an operator, do it to the 2 previous values
+		3x*4+
+		6 4+
+		10
+if = 	3+x*4
+pf = 	3x4*+
+
+
+for loop through infix
+	if char is a number
+		move to postfix
+	else
+		if higher priority than what's on top of the stack
+			move to stack
+		else
+			move lower/= priority to postfix
+
+if: 3+4*5/x-6
+pf: 345*x/+6-
+
+if: (3+4)*5/(x-6)
+pf: 34+5*x6-/
+
+if char is (
+	goes to stack
+if char is )
+	move everything on stack until (, delete (
+
+
+evaluate postfix
+	see num
+		goes to stack as float
+	see operator
+		first on stack operator second on stack
+		result goes to stack
+	repeat
+
+------------------------------------------------------------------------
+10/21
+
+quiz
+
+if to pf
+1-(2+3/4*5)*(6-7+8)/9
+
+1234/5*+67-8+*9/-
+
+
+evaluate pf
+9123*+4-6*-
+
+-9
+
+------------------------------------------------------------------
+10/26
+
+BST: Binary Search Tree
+
+all 6 methods have to use recursion
+
+nodes have an item, a left pointer and a right pointer
+	L and R initialize to None
+
+
+class Blob:
+	
+	def __init__(self):
+		self.mRoot = None
+		
+	def insert(self, item):
+		if self.exists(item():
+			return False
+		n = Node(item)
+		self.mRoot = self.insertR(n, self.mRoot)
+		return True
+		
+	def insertR(self, n, current):
+		if current is None:
+			current = n
+		elif n.mItem < current.mItem:
+			current.mL = self.insertR(n, current.mL) # walk left
+		elif n.mItem > current.mItem:
+			current.mR = self.insertR(n, current.mR) # walk right
+		return current
+			
+	def delete(self, item):
+		if not self.exists(item):
+			return False
+		self.mRoot = self.DeleteR(item, self.mRoot)
+		return True
+		
+	def deleteR(self, item, current):
+		if item < current.mItem:
+			current.mL = self.deleteR(item, current.mL)
+		elif item > current.mItem:
+			current.mR = self.deleteR(item, current.mR)
+		else: # current is pointing to the node containing the item to be deleted
+			if current.mL is None and current.mR is None: # no child case
+				current = None
+			elif current.mL is None and current.mR is not None: # one right child
+				current = current.mR
+			elif current.mL is not None and current.mR is None: # one left child
+				current = current.mL
+			else: # two children
+				s = current.mR
+				while s.mL is not None:
+					s = s.mL
+				current.mItem = s.mItem
+				current.mR = deleteR(s.mItem, current.mR) # start from current's right
+		return current	
+		
+	def exists(self, item):
+		return self.existsR(item, self.mRoot)
+		
+	def existsR(self, item, current):
+		if current == None:
+			return False
+		elif current.item == item:
+			return True
+		elif item < current.mItem:
+			return self.existsR(item, current.mL)
+		elif item > current.mItem:
+			return self.existsR(item, current.mR)
+	
+	
+	def retrieve(self, item):
+		return self.existsR(item, self.mRoot)
+		
+	def retrieveR(self, item, current):
+		if current == None:
+			return None
+		elif current.item == item:
+			return current.mItem
+		elif item < current.mItem:
+			return self.existsR(item, current.mL)
+		elif item > current.mItem:
+			return self.existsR(item, current.mR)
+	
+	
+	def traverse(self):
+		traverseR(callback, self.mRoot)
+			
+	def traverseR(self, callback, current):
+		if current.mR is not None:
+			callback(current.mItem)
+			traverseR(callback, current.mR)
+			traverseR(callback, current.mL)
+	
+	
+	def size(self):
+		total = [0]
+		sizeR(total, self.mRoot)
+		return total[0]		
+		
+	def sizeR(self, total, current):
+		if current is not None:
+			total[0] += 1
+		sizeR(total, current.mL)
+		sizeR(total, current.mR)
+		
+	
+		
+		
+		
+		
+			
+-------------------------------------------------------------
+
+exponents quiz
+
+exponents = {0: 1, 1: 2, 2: 4, 3: 8, 4: 16, 5: 32, 6: 64, 7: 128, 8: 256, 9: 512,
+			10: 1k, 11: 2k, 12: 4k, 13: 8k, 14: 16k, 15: 32k, 16: 64k, 17: 128k, 18: 256k, 19: 512k
+			20: 1m, 21: 2m, 22: 4m, 23: 8m, 24: 16m, 25: 32m, 26: 64m, 27: 128m, 28: 256m, 29: 512m
+			30: 1b, 31: 2b, 32: 4b, 33: 8b, 34: 16b, 35: 32b, 36: 64b, 37: 128b, 38: 256b, 39: 512b
+			40: 1t, 41: 2t, 42: 4t, 43: 8t, 44: 16t, 45: 32t, 46: 64t, 47: 128t, 48: 256t, 49: 512t}
+		
+nums = [0,1,2,3,4,5,6,7,8,9,
+	   10,11,12,13,14,15,16,17,18,19,
+	   20,21,22,23,24,25,26,27,28,29,
+	   30,31,32,33,34,35,36,37,38,39,
+	   40,41,42,43,44,45,46,47,48,49]
+	
+randnums = 
+
+for i in rand_nums:
+	correct = ask(i)
+	while not correct:
+		ask(i)
+	
+						
+			
+			
+def ask(num):
+			
+		
+---------------------------------------------------------------------------------------------------------
+
+								Bently Riggs
+									
+									B
+										e
+											n
+										l			t
+									i		r			y
+								g 				s
+														
+
+							Christopher
+								c
+				 					h
+								e			r
+										i 			s
+											o				t
+												p
+delete h:
+	find smallest bigger than:
+		c
+			i
+		e 			r
+				o 			s
+					p 			t
+
+delete c:
+			i
+		e 			r
+				o 			s
+					p 			t
+
+
+tree is balanced if every node in the tree is balanced
+
+node is balanced if left and right sub trees are within 1 sub depth
+
+2 3 tree
+
+trying to delete an item that's not in a leaf node, replace with the in order successor
+
+to delete leaf node, just remove it
+
+if there is a hole after removing a leaf try these in order:
+	1. try to borrow from a sibling
+		if sibling has 2
+			one of them becomes the parent
+				the old parent becomes the leaf
+	2. demote a parent
+		parent is demoted into the sibling
+		
+		if there's a hole at parent level, repeat as needed
+			
+			
+							alyssa ponce
+								
+								o
+						cl 				s
+					a 	e 	n 			p	y
+								
+								p
+						cl 				s
+					a 	e 	n 			q	y
+					
+							delete p			
+								l
+							c 		o
+						a 	e 		n	sy
+							
+							delete n, then a
+								
+							ls
+						ce 	o	y
+
+
+2 3 4 trees
+	
+	node can have 3 items with 4 children
+		makes it so you don't have to walk back up the tree
+
+100 tree is useful if data is so big that it has to be stored on the hard drive
+
+
+
+					insert 		delete 		retrieve 	find smallest 	find atr 	between
+unsorted py list 	n 			n 			n
+
+sorted py list 		n 			n 			logn
+
+linked list 		n 			n 			n
+
+bst 				logn 		logn 		logn 		logn 			logn 		logn
+
+hash table 			1 			1  			1 			n 				n  			n
+
+
+----------------------------------------------------------------------------------------------
+
+test 2 review
+if to pf:
+2+3*(4/5-(6*7/8)+9)/2
+
+2345/67*8/-9+*2/+
+
+
+e pf
+92-21+-84/32--*17-/
+
+-2/3
+
+insert into bst
+
+								
+
+
+extra credit 3
+	faculty evaluation for 1% extra
+
+
+Hash tables
+
+
+class Blob:
+	
+	def __init__(self, datasize):
+		tablesize = datasize*2+1
+		while not is_prime(tablesize):
+			tablesize += 2
+		self.m_table = [None] * tablesize
+		self.m_size = 0 # add 1 for successful insert, minus 1 for delete
+	
+			
+	
+	def is_prime(self, x):
+		s = int(math.sqrt(x))
+		for i in range(2, s+1):
+			if x % i == 0:
+				return False
+			return True
+			
+
+	def insert(self, item):
+		if self.exists(item):
+			return False
+		key = int(item)
+		index = key % len(self.m_table)
+		while self.m_table[index]:
+			index += 1
+			if index >= len(self.m_table):
+				index = 0
+		self.m_table[index] = item
+		self.m_size += 1
+		return True	
+			
+	
+	def traverse(self, callback):
+		for item in self.m_table:
+			if item:
+				callback(item)
+				
+				
+	def size(self):
+		count = 0
+		for item in self.m_table:
+			if item:
+				count += 1
+		return count
+		
+		
+	def exists(self, item):
+		key = int(item)
+		index = key % len(self.m_table)
+		while True:
+			if self.m_table[index] is None:
+				return False
+			if self.m_table[index] and self.m_table[index] == item:
+				return True
+			index += 1
+			if index >= len(self.m_table)
+				index
+				
+	
+	def delete(self, item):
+		if not self.exists(item):
+			return False
+		key = int(item)
+		index = key % len(self.m_table)
+		while not (self.m_table[index] and self.m_table[index] == item)
+			index += 1
+			if index >= len(self.m_table)
+			index = 0
+		self.m_table[index] = False
+	
+	def retrieve
+		
+
+class Student:
+
+	def __int__(self):
+		return int(self.ssn.replace('-', ''))
+
+
+
+
+
+
+
+how to hash names
+
+first convert to a number
+	
+	b 			a 			r 			t
+	1*26^3 	+	0*26^2 	+	17*26^1  +	19*26^0  = unique bart number
+	
+	
+double hash: use if point clustering of 100 happens
+	first hash
+		index = key % tablesize
+	second hash
+		step = key % 100 + 100   # 100 to 199
+
+
+
+practice q from final test
+
+	table 7 big
+	insert 5 items
+	secondary hash functions given
+		step = key % 5 + 2
+		items to insert:
+			8
+			10
+			3
+			24
+			17
+		
+	index = key % 7
+	
+	8 % 7 = 1
+	10 % 7 = 3
+	3 % 7 = 3
+		step = 3%5+2 = 3+2 = 5
+		3 -> 1 -> 6
+	24 % 7 = 3
+		step = 24%5+2 = 4+2 = 6
+		3 -> 2
+	17 % 7 = 3
+		step = 17%5+2 = 2+2 = 4
+		3 -> 0
+		
+	0: 17
+
+
+
+	1: 8
+	2: 24
+	3: 10
+	4: 
+	5: 
+	6: 3
+
+
+graph.txt
+7
+9
+0 1
+1 2
+2 3
+2 5
+2 6
+3 4
+3 5
+5 6
+2
+1 6
+
+breadth first == findpath
+
+
+def main():
+	f = open("Graph.txt")
+	numV = int(f.readline())
+	G = MyGraph(numV)
+	numE = int(f.readline())
+	for i in range(numE):
+		line = f.readline() # "0 1"
+		words = line.split() # ["0", "1"]
+		G.addEdge(int(words[0]), int(words[1])) # first item and 2nd, not 0 and 1
+	numT = int(f.readline())
+	for i in range(numT):
+		line = f.readline() # "0 1"
+		words = line.split() # ["0", "1"]
+		print(G.findPath(int(words[0]), int(words[1])))
+
+
+
+dequeue pop from index 0
+queue append
+
+from = [-1] * len(self.mNeighbors)
+Q.Enqueue(v0)
+from[v0] = v0
+while Q.IsEmpty() is False:
+	c = Q.Dequeue()
+
+--------------------------------------------------------------------------------------
+
+Final:
+
+all mult choice except the last bit
+	hash or graph code
+
+logs and exponents
+	log base 2 of number
+	story problems
+	
+big O Qs
+	number of steps an algorith takes 5n^3+20n
+		big O is n^3
+	for loops some nested some in sequence
+		nested muktiply them
+		sequence take the worst
+	know all big O we've talked about
+	bottleneck = worst big O
+	
+5 linked list questions
+	what does code print
+	write code that inserts or deletes the item
+	
+2 graphics calc questions
+	unfix to pf
+	evaluate pf
+	
+sorting
+	what does it look like after 1 pass of quick sort
+		use the algorithm from class
+	given sorting algs, arrange from fast to slow assuming best/worst/expected case scenarios
+	
+bst
+	how do you find the smallest or biggest 
+		walk all the way left or rigiht
+	where does this item go in the bst
+	which item when inserted would make this tree balanced
+	big O of bst
+	picture of bst
+		delete item what's it look like after
+		
+2 3 trees
+	how many items can be packed in a tree of certain height?
+	result of inserting these nums in a tree
+	result of deleting items
+	why is 2 3 tree better than bst
+		doesn't degenerate
+		is full
+	100 tree good idea if data needs to be stored on hard drive
+	234 tree don't have to walk back up
+	
+graphs
+	ways to store a graph
+		neighbors list/ adjacency list
+		matrix way
+		
+		which is better
+			depends if data is sparce or dence
+			depends if asking here to there or places can go
+			
+		search graph above 
+			list vertices in order visited
+			
+hash tables
+	which operations does hash beat bst
+		hash is fast for insert, delete, retrieve
+		bst is fast for comparing
+			smallest biggest, after,  in between
+			
+	double hash
+		insert into 7 big
+		skip function given
+		why is double better than linear probing
+			to avoid clustering, breaks up clustering
+			
+			
+			
+matrix way
+					to
+			0 	1 	2 	3 	4 	5
+
+		0 	F 	T 	F 	F 	F 	F
+
+		1 	T 	F 	T 	F 	F 	F
+from
+		2 	F 	F 	T 	F 	T 	T
+
+		3 etc
+
+		4
+
+		5
+
+better if data is dense (lots of connections)
+order
+
+
+----------------------------------------------------------------------
+
+
+
+22 14 76 11 98 25 81 65 52 71
+
+
+
+14 22 76 				22  							22 76 									 22 52 76 								52
+				11 14 		25 76 98 			11 14    25 52 65     81 98 			11 14    25 65      81 98  				22 				  76
+																															11 14   25      65 71     81 98
+
+delete 52
+							52
+				22 						76
+			11 14   25   			65      81 98 
+
+
+							65
+				22 						81
+			11 14   25   			76       98 
+
+delete 98
+							65
+				22 						76 81
+			11 14   25   			        
+
+
+							
+						22 65				
+			11 14   		25   	76 81		 
+
+
+
+ 			expected 	best 	worst
+
+bubble		n^2
+
+shaker 		n^2 		n 		n^2 			blank == same
+
+counting 	n
+
+merge 		nlogn
+
+quick 		nlogn 		nlogn 	n^2
+
+mod quick 	nlogn
+
+
+
+					insert 1 item 		delete 		retrieve 		find min
+
+py list 			n 					same vv 	same 			same vv
+
+sorted py list 		n (+logn) 						logn
+
+linked list 		n 								same vv
+
+bst 				logn -> n 										logn
+
+2 3 tree 			logn 											logn
+
+hash table 			1 					1 			1 				n
+
+
+
+depends on abstract data type
+	unordered unique container aka blob shown above
+		non unique moves from n to 1
+
+
+
+linked list questions
+	
+	self.mFirst -> bob -> sally -> jane -> mark -v
+							^
+						current
+						
+	delete jane:
+		current.next = current.next.next
+		
+		
+	insert tim (n) between sally and jane
+		n.next = current.next
+		current.next = n
+		
+	what does this code print?
+		
+		while current.next is not None:
+			print(current.item)
+			current = current.next
+			
+		sally
+		jane
+		
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
